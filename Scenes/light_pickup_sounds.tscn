@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgdl4rc5t17dh"]
+
+[ext_resource type="AudioStream" uid="uid://val3mis6ky46" path="res://Assets/Audio/LightPickup1.wav" id="1_okbjq"]
+[ext_resource type="AudioStream" uid="uid://bev6xtc6wcp57" path="res://Assets/Audio/LightPickup2.wav" id="2_kypq4"]
+[ext_resource type="AudioStream" uid="uid://csmsptpkat78c" path="res://Assets/Audio/LightPickup3.wav" id="3_xochh"]
+[ext_resource type="AudioStream" uid="uid://dew4dq3t1nvbj" path="res://Assets/Audio/LightPickup4.wav" id="4_nylux"]
+[ext_resource type="AudioStream" uid="uid://bep1brdok1bnr" path="res://Assets/Audio/LightPickup5.wav" id="5_u3q71"]
+[ext_resource type="AudioStream" uid="uid://dr8j6quoidka3" path="res://Assets/Audio/LightPickup6.wav" id="6_7vvlr"]
+
+[node name="LightPickupSounds" type="Node"]
+
+[node name="LightPickupSFX1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_okbjq")
+bus = &"Music"
+
+[node name="LightPickupSFX2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kypq4")
+bus = &"Music"
+
+[node name="LightPickupSFX3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xochh")
+bus = &"Music"
+
+[node name="LightPickupSFX4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nylux")
+bus = &"Music"
+
+[node name="LightPickupSFX5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_u3q71")
+bus = &"Music"
+
+[node name="LightPickupSFX6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7vvlr")
+bus = &"Music"

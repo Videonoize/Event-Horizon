@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://qd5fw8jxk4ks"]
+
+[ext_resource type="Texture2D" uid="uid://b5g5svdxlmtwc" path="res://Assets/Sprites/Flashlight Texture 2.png" id="1_fn2ai"]
+[ext_resource type="Script" path="res://Scripts/Entities/Player/flashlight.gd" id="2_dinjp"]
+
+[node name="Flashlight" type="PointLight2D"]
+rotation = -1.56771
+scale = Vector2(0.379036, 0.344741)
+shadow_enabled = true
+texture = ExtResource("1_fn2ai")
+texture_scale = 2.66
+script = ExtResource("2_dinjp")
+
+[node name="Battery" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="ToggleTimer" type="Timer" parent="."]
+one_shot = true

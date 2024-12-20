@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://tf7jvokl3nqp"]
+
+[ext_resource type="Script" path="res://Scripts/Utilities/textbox.gd" id="1_4x6bb"]
+[ext_resource type="FontFile" uid="uid://dgsxx5c1oqotd" path="res://Assets/Fonts/MEGAMAN10.ttf" id="1_c83h6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmoxk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0ons"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pc8yj"]
+
+[node name="Textbox" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_4x6bb")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -100.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 48
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xmoxk")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d0ons")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_c83h6")
+theme_override_font_sizes/font_size = 1
+text = "There is always a light to reach out and grasp onto, no matter how dim, no matter how dark your world may be."
+label_settings = SubResource("LabelSettings_pc8yj")
+autowrap_mode = 2
+clip_text = true
+visible_characters = 0
+visible_ratio = 0.0

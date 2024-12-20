@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgjxf02vndq8h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esqf0"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dvlf"]
+bg_color = Color(0.750396, 0.737882, 0.74101, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Battery UI" type="ProgressBar" parent="." groups=["UI"]]
+light_mask = 0
+z_index = 2
+offset_left = 491.0
+offset_top = 329.0
+offset_right = 622.0
+offset_bottom = 344.0
+theme_override_styles/background = SubResource("StyleBoxFlat_esqf0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6dvlf")
+max_value = 60.0
+show_percentage = false

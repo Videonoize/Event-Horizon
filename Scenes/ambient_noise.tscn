@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds6bja2dpwjiy"]
+
+[ext_resource type="AudioStream" uid="uid://l485p4sebhsv" path="res://Assets/Audio/Ambient Noise.wav" id="1_dqmgq"]
+
+[node name="Ambient Noise" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dqmgq")

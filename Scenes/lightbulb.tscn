@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3eilwndavicq"]
+
+[ext_resource type="PackedScene" uid="uid://c420lb561q3k8" path="res://Scenes/interactionArea.tscn" id="1_6t7k0"]
+[ext_resource type="Script" path="res://Scripts/Utilities/lightbulb.gd" id="1_ub0xu"]
+[ext_resource type="Texture2D" uid="uid://2vjynur2lgmx" path="res://Assets/Sprites/Lightbulb.png" id="2_nxs6o"]
+
+[sub_resource type="Gradient" id="Gradient_c3jiv"]
+offsets = PackedFloat32Array(0, 0.686667)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_woeyb"]
+gradient = SubResource("Gradient_c3jiv")
+width = 144
+height = 144
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp6dc"]
+atlas = ExtResource("2_nxs6o")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa2ab"]
+atlas = ExtResource("2_nxs6o")
+region = Rect2(16, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b73eo"]
+atlas = ExtResource("2_nxs6o")
+region = Rect2(32, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3di87"]
+atlas = ExtResource("2_nxs6o")
+region = Rect2(48, 0, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8by6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp6dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa2ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b73eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3di87")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ay7dd"]
+radius = 49.0
+
+[node name="Lightbulb" type="PointLight2D"]
+light_mask = 3
+position = Vector2(0, 2)
+energy = 1.11
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 2.8
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_woeyb")
+script = ExtResource("1_ub0xu")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_6t7k0")]
+position = Vector2(0, -2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_r8by6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_ay7dd")
